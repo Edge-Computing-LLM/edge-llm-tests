@@ -3,7 +3,7 @@
 Go-first validation and sanitized evidence for the
 [Edge-Computing-LLM](https://github.com/Edge-Computing-LLM) project family.
 The harness checks repository quality, Helm profiles, the local Ubuntu + k3s +
-NVIDIA GPU substrate, the deployed observability stack, and the fixed Qwen
+NVIDIA GPU substrate, the deployed observability stack, and a selectable GGUF
 runtime smoke contract from one reproducible command.
 
 The project is an evidence plane, not a deployment layer. It does not install,
@@ -18,7 +18,7 @@ through the owning repository.
 | `edge-cli` | module integrity, formatting, unit/race tests, vet, vulnerability scan, build, read-only infrastructure validation |
 | `k3s-nvidia-edge` | module integrity, formatting, unit/race tests, vet, vulnerability scan, build, Helm lint/render, read-only doctor |
 | `llm-observability-stack` | module integrity, formatting, unit/race tests, vet, vulnerability scan, three Go builds, Helm dependencies/lint, five render profiles, live doctor |
-| `qwen-gguf-observability` | module integrity, formatting, unit/race tests, vet, vulnerability scan, build, live contract validation, fixed smoke probe |
+| `gguf-observability` | module integrity, formatting, unit/race tests, vet, vulnerability scan, build, model-selectable live contract validation, fixed smoke probe |
 | Local platform | Ubuntu/kernel/tool versions, NVIDIA GPU, node readiness, RuntimeClass, GPU resource, workloads, releases, and storage |
 | Dashboard candidates | existing Git integrity plus available lint/test/build scripts; dependencies are never installed or changed |
 
@@ -32,6 +32,18 @@ and `nvidia-smi`. From this repository:
 
 ```bash
 go run ./cmd/edge-llm-tests -mode all -root ..
+```
+
+Select the currently deployed model through the observer's environment contract,
+for example:
+
+```bash
+GGUF_MODEL=llama3-2-1b-local \
+GGUF_VRAM_CEILING_MIB=900 \
+GGUF_EXPECTED_NUM_GPU=8 \
+GGUF_EXPECTED_NUM_CTX=256 \
+GGUF_EXPECTED_NUM_BATCH=1 \
+go run ./cmd/edge-llm-tests -mode cluster -root ..
 ```
 
 Useful focused runs:
@@ -54,11 +66,11 @@ Each run creates a UTC-stamped directory under `results/`:
 results/20260719T120000Z/
 ├── report.md       human-readable outcome and bounded failure details
 ├── summary.json    versioned machine-readable evidence
-└── qwen-smoke.json privacy-safe smoke metadata, when the probe runs
+└── gguf-smoke.json privacy-safe smoke metadata, when the probe runs
 ```
 
 Result files are intentionally suitable for source control. Commands and
-bounded output pass through the sanitizer. The Qwen artifact records only the
+bounded output pass through the sanitizer. The GGUF artifact records only the
 model identifier, observation time, duration, and pass state; the prompt and
 model response are never stored. See [the evidence policy](docs/EVIDENCE-POLICY.md).
 

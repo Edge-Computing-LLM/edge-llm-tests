@@ -1,0 +1,1467 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20260719T043235Z",
+  "started_at": "2026-07-19T04:32:35.113879354Z",
+  "finished_at": "2026-07-19T04:33:47.262460741Z",
+  "mode": "all",
+  "root": "/media/[redacted-user]/External1/Waqas-Projects/Project-Linux-Kubernetes-Nvidia/Project-Edge-Computing-LLM",
+  "environment": {
+    "os": "Ubuntu 24.04.3 LTS",
+    "kernel": "Linux 6.17.0-40-generic x86_64 GNU/Linux",
+    "go": "go version go1.26.5 linux/amd64",
+    "k3s": "k3s version v1.36.2+k3s1 (01b6f04a)\ngo version go1.26.4",
+    "kubernetes": "Client Version: v1.36.2+k3s1\nKustomize Version: v5.8.1\nServer Version: v1.36.2+k3s1",
+    "helm": "v4.2.3+g43e8b7f",
+    "gpu": "NVIDIA GeForce 940M, 580.95.05, 1024 MiB",
+    "gpu_allocatable": 1
+  },
+  "repositories": [
+    {
+      "name": "edge-cli",
+      "path": "edge-cli",
+      "origin": "https://github.com/Edge-Computing-LLM/edge-cli.git",
+      "branch": "codex/deep-audit-ubuntu-k3s-nvidia-20260719",
+      "commit": "59924f3798ad",
+      "upstream": "origin/codex/deep-audit-ubuntu-k3s-nvidia-20260719",
+      "ahead": 0,
+      "behind": 0,
+      "dirty_files": 0,
+      "kind": "organization"
+    },
+    {
+      "name": "k3s-nvidia-edge",
+      "path": "k3s-nvidia-edge",
+      "origin": "https://github.com/Edge-Computing-LLM/k3s-nvidia-edge.git",
+      "branch": "codex/deep-audit-ubuntu-k3s-nvidia-20260719",
+      "commit": "95f5e6cb9c29",
+      "upstream": "origin/codex/deep-audit-ubuntu-k3s-nvidia-20260719",
+      "ahead": 0,
+      "behind": 0,
+      "dirty_files": 0,
+      "kind": "organization"
+    },
+    {
+      "name": "llm-observability-stack",
+      "path": "llm-observability-stack",
+      "origin": "https://github.com/Edge-Computing-LLM/llm-observability-stack.git",
+      "branch": "codex/deep-audit-ubuntu-k3s-nvidia-20260719",
+      "commit": "a1b1bbfb77d9",
+      "upstream": "origin/codex/deep-audit-ubuntu-k3s-nvidia-20260719",
+      "ahead": 0,
+      "behind": 0,
+      "dirty_files": 0,
+      "kind": "organization"
+    },
+    {
+      "name": "qwen-gguf-observability",
+      "path": "qwen-gguf-observability",
+      "origin": "https://github.com/Edge-Computing-LLM/qwen-gguf-observability.git",
+      "branch": "codex/deep-audit-ubuntu-k3s-nvidia-20260719",
+      "commit": "07a3d55d4a2b",
+      "upstream": "origin/codex/deep-audit-ubuntu-k3s-nvidia-20260719",
+      "ahead": 0,
+      "behind": 0,
+      "dirty_files": 0,
+      "kind": "organization"
+    },
+    {
+      "name": "grafana-faro-nextjs-example",
+      "path": "dashboard-template-candidates/grafana-faro-nextjs-example",
+      "origin": "https://github.com/grafana/faro-nextjs-example.git",
+      "branch": "main",
+      "commit": "b9547013578e",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty_files": 0,
+      "kind": "candidate"
+    },
+    {
+      "name": "material-kit-react",
+      "path": "dashboard-template-candidates/material-kit-react",
+      "origin": "https://github.com/devias-io/material-kit-react.git",
+      "branch": "main",
+      "commit": "6423e1a2f092",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty_files": 0,
+      "kind": "candidate"
+    },
+    {
+      "name": "next-shadcn-admin-dashboard",
+      "path": "dashboard-template-candidates/next-shadcn-admin-dashboard",
+      "origin": "https://github.com/arhamkhnz/next-shadcn-admin-dashboard.git",
+      "branch": "main",
+      "commit": "43f47b8b7022",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 18,
+      "dirty_files": 0,
+      "kind": "candidate"
+    },
+    {
+      "name": "next-shadcn-dashboard-starter",
+      "path": "dashboard-template-candidates/next-shadcn-dashboard-starter",
+      "origin": "https://github.com/Kiranism/next-shadcn-dashboard-starter.git",
+      "branch": "main",
+      "commit": "21848bd25125",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 86,
+      "dirty_files": 0,
+      "kind": "candidate"
+    },
+    {
+      "name": "nextadmin-dashboard",
+      "path": "dashboard-template-candidates/nextadmin-dashboard",
+      "origin": "https://github.com/NextAdminHQ/nextjs-admin-dashboard.git",
+      "branch": "main",
+      "commit": "8913468e1d00",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 1,
+      "dirty_files": 0,
+      "kind": "candidate"
+    },
+    {
+      "name": "rh-ai-observability-summarizer",
+      "path": "dashboard-template-candidates/rh-ai-observability-summarizer",
+      "origin": "https://github.com/rh-ai-quickstart/ai-observability-summarizer.git",
+      "branch": "main",
+      "commit": "048f784a19d0",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty_files": 0,
+      "kind": "candidate"
+    },
+    {
+      "name": "tailadmin-nextjs",
+      "path": "dashboard-template-candidates/tailadmin-nextjs",
+      "origin": "https://github.com/TailAdmin/free-nextjs-admin-dashboard.git",
+      "branch": "main",
+      "commit": "d3526b35fb7e",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty_files": 0,
+      "kind": "candidate"
+    }
+  ],
+  "checks": [
+    {
+      "id": "edge-cli:git-clean",
+      "scope": "edge-cli",
+      "description": "Git worktree is clean",
+      "status": "PASS",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_at": "2026-07-19T04:32:35.162815527Z",
+      "duration": 2923271
+    },
+    {
+      "id": "edge-cli:git-fsck",
+      "scope": "edge-cli",
+      "description": "Git object connectivity",
+      "status": "PASS",
+      "command": [
+        "git",
+        "fsck",
+        "--connectivity-only"
+      ],
+      "started_at": "2026-07-19T04:32:35.165883746Z",
+      "duration": 81462977
+    },
+    {
+      "id": "edge-cli:git-status",
+      "scope": "edge-cli",
+      "description": "Git worktree has no tracked or untracked changes",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:32:35.247370986Z",
+      "duration": 3957010
+    },
+    {
+      "id": "edge-cli:gofmt",
+      "scope": "edge-cli",
+      "description": "Go sources are formatted",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:32:35.251345271Z",
+      "duration": 14067082
+    },
+    {
+      "id": "edge-cli:go-mod-verify",
+      "scope": "edge-cli",
+      "description": "Verify Go module downloads",
+      "status": "PASS",
+      "command": [
+        "go",
+        "mod",
+        "verify"
+      ],
+      "started_at": "2026-07-19T04:32:35.265438164Z",
+      "duration": 53072719,
+      "output": "all modules verified"
+    },
+    {
+      "id": "edge-cli:go-test",
+      "scope": "edge-cli",
+      "description": "Run Go unit tests",
+      "status": "PASS",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:32:35.318563725Z",
+      "duration": 1402622288,
+      "output": "?   \tgithub.com/Edge-Computing-LLM/edge-cli/cmd/edge\t[no test files]\n?   \tgithub.com/Edge-Computing-LLM/edge-cli/internal/app\t[no test files]\nok  \tgithub.com/Edge-Computing-LLM/edge-cli/internal/cli\t0.011s\nok  \tgithub.com/Edge-Computing-LLM/edge-cli/internal/config\t0.006s\n?   \tgithub.com/Edge-Computing-LLM/edge-cli/internal/execx\t[no test files]\n?   \tgithub.com/Edge-Computing-LLM/edge-cli/internal/helm\t[no test files]\nok  \tgithub.com/Edge-Computing-LLM/edge-cli/internal/kubernetes\t0.006s\n?   \tgithub.com/Edge-Computing-LLM/edge-cli/internal/linux\t[no test files]\nok  \tgithub.com/Edge-Computing-LLM/edge-cli/internal/modules/infra\t0.009s\nok  \tgithub.com/Edge-Computing-LLM/edge-cli/internal/modules/observability\t0.005s\nok  \tgithub.com/Edge-Computing-LLM/edge-cli/internal/nvidia\t0.003s\nok  \tgithub.com/Edge-Computing-LLM/edge-cli/internal/platform\t0.003s\n?   \tgithub.com/Edge-Computing-LLM/edge-cli/pkg/edge\t[no test files]"
+    },
+    {
+      "id": "edge-cli:go-race",
+      "scope": "edge-cli",
+      "description": "Run Go race tests",
+      "status": "PASS",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:32:36.721585257Z",
+      "duration": 4722269132,
+      "output": "?   \tgithub.com/Edge-Computing-LLM/edge-cli/cmd/edge\t[no test files]\n?   \tgithub.com/Edge-Computing-LLM/edge-cli/internal/app\t[no test files]\nok  \tgithub.com/Edge-Computing-LLM/edge-cli/internal/cli\t1.028s\nok  \tgithub.com/Edge-Computing-LLM/edge-cli/internal/config\t1.028s\n?   \tgithub.com/Edge-Computing-LLM/edge-cli/internal/execx\t[no test files]\n?   \tgithub.com/Edge-Computing-LLM/edge-cli/internal/helm\t[no test files]\nok  \tgithub.com/Edge-Computing-LLM/edge-cli/internal/kubernetes\t1.018s\n?   \tgithub.com/Edge-Computing-LLM/edge-cli/internal/linux\t[no test files]\nok  \tgithub.com/Edge-Computing-LLM/edge-cli/internal/modules/infra\t1.017s\nok  \tgithub.com/Edge-Computing-LLM/edge-cli/internal/modules/observability\t1.024s\nok  \tgithub.com/Edge-Computing-LLM/edge-cli/internal/nvidia\t1.016s\nok  \tgithub.com/Edge-Computing-LLM/edge-cli/internal/platform\t1.016s\n?   \tgithub.com/Edge-Computing-LLM/edge-cli/pkg/edge\t[no test files]"
+    },
+    {
+      "id": "edge-cli:go-vet",
+      "scope": "edge-cli",
+      "description": "Run Go vet",
+      "status": "PASS",
+      "command": [
+        "go",
+        "vet",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:32:41.444106267Z",
+      "duration": 296635712
+    },
+    {
+      "id": "edge-cli:govulncheck",
+      "scope": "edge-cli",
+      "description": "Check reachable Go vulnerabilities",
+      "status": "PASS",
+      "command": [
+        "go",
+        "run",
+        "golang.org/x/vuln/cmd/govulncheck@latest",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:32:41.740770232Z",
+      "duration": 6516275231,
+      "output": "No vulnerabilities found."
+    },
+    {
+      "id": "edge-cli:build",
+      "scope": "edge-cli",
+      "description": "Build edge CLI",
+      "status": "PASS",
+      "command": [
+        "go",
+        "build",
+        "-o",
+        "/tmp/edge-llm-tests-builds-3151655065/edge",
+        "./cmd/edge"
+      ],
+      "started_at": "2026-07-19T04:32:48.257074946Z",
+      "duration": 707117688
+    },
+    {
+      "id": "k3s-nvidia-edge:git-clean",
+      "scope": "k3s-nvidia-edge",
+      "description": "Git worktree is clean",
+      "status": "PASS",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_at": "2026-07-19T04:32:48.978644651Z",
+      "duration": 3130810
+    },
+    {
+      "id": "k3s-nvidia-edge:git-fsck",
+      "scope": "k3s-nvidia-edge",
+      "description": "Git object connectivity",
+      "status": "PASS",
+      "command": [
+        "git",
+        "fsck",
+        "--connectivity-only"
+      ],
+      "started_at": "2026-07-19T04:32:48.981786354Z",
+      "duration": 120317587,
+      "output": "dangling blob 9a1473eece75089ae666144794916d040cb6b90c\ndangling tree e45eadd2653f38f54140f252f59fddbb59e35d21"
+    },
+    {
+      "id": "k3s-nvidia-edge:git-status",
+      "scope": "k3s-nvidia-edge",
+      "description": "Git worktree has no tracked or untracked changes",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:32:49.102182278Z",
+      "duration": 2797695
+    },
+    {
+      "id": "k3s-nvidia-edge:gofmt",
+      "scope": "k3s-nvidia-edge",
+      "description": "Go sources are formatted",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:32:49.104993757Z",
+      "duration": 6046769
+    },
+    {
+      "id": "k3s-nvidia-edge:go-mod-verify",
+      "scope": "k3s-nvidia-edge",
+      "description": "Verify Go module downloads",
+      "status": "PASS",
+      "command": [
+        "go",
+        "mod",
+        "verify"
+      ],
+      "started_at": "2026-07-19T04:32:49.111045859Z",
+      "duration": 5054600,
+      "output": "all modules verified"
+    },
+    {
+      "id": "k3s-nvidia-edge:go-test",
+      "scope": "k3s-nvidia-edge",
+      "description": "Run Go unit tests",
+      "status": "PASS",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:32:49.116137298Z",
+      "duration": 277549079,
+      "output": "?   \tgithub.com/Edge-Computing-LLM/k3s-nvidia-edge/cmd/k3s-nvidia-edge\t[no test files]\nok  \tgithub.com/Edge-Computing-LLM/k3s-nvidia-edge/pkg/edgebase\t0.002s"
+    },
+    {
+      "id": "k3s-nvidia-edge:go-race",
+      "scope": "k3s-nvidia-edge",
+      "description": "Run Go race tests",
+      "status": "PASS",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:32:49.393740682Z",
+      "duration": 1410985378,
+      "output": "?   \tgithub.com/Edge-Computing-LLM/k3s-nvidia-edge/cmd/k3s-nvidia-edge\t[no test files]\nok  \tgithub.com/Edge-Computing-LLM/k3s-nvidia-edge/pkg/edgebase\t1.015s"
+    },
+    {
+      "id": "k3s-nvidia-edge:go-vet",
+      "scope": "k3s-nvidia-edge",
+      "description": "Run Go vet",
+      "status": "PASS",
+      "command": [
+        "go",
+        "vet",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:32:50.804810972Z",
+      "duration": 117772699
+    },
+    {
+      "id": "k3s-nvidia-edge:govulncheck",
+      "scope": "k3s-nvidia-edge",
+      "description": "Check reachable Go vulnerabilities",
+      "status": "PASS",
+      "command": [
+        "go",
+        "run",
+        "golang.org/x/vuln/cmd/govulncheck@latest",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:32:50.922592695Z",
+      "duration": 4606081677,
+      "output": "No vulnerabilities found."
+    },
+    {
+      "id": "k3s-nvidia-edge:build",
+      "scope": "k3s-nvidia-edge",
+      "description": "Build Layer 1 CLI",
+      "status": "PASS",
+      "command": [
+        "go",
+        "build",
+        "-o",
+        "/tmp/edge-llm-tests-builds-3151655065/k3s-nvidia-edge",
+        "./cmd/k3s-nvidia-edge"
+      ],
+      "started_at": "2026-07-19T04:32:55.528735299Z",
+      "duration": 472524997
+    },
+    {
+      "id": "k3s-nvidia-edge:helm-lint",
+      "scope": "k3s-nvidia-edge",
+      "description": "Lint Layer 1 Helm chart",
+      "status": "PASS",
+      "command": [
+        "helm",
+        "lint",
+        "charts/k3s-nvidia-edge"
+      ],
+      "started_at": "2026-07-19T04:32:56.001270952Z",
+      "duration": 103041495,
+      "output": "==\u003e Linting charts/k3s-nvidia-edge\n[INFO] Chart.yaml: icon is recommended\n\n1 chart(s) linted, 0 chart(s) failed"
+    },
+    {
+      "id": "k3s-nvidia-edge:helm-render",
+      "scope": "k3s-nvidia-edge",
+      "description": "Render Layer 1 Helm chart",
+      "status": "PASS",
+      "command": [
+        "helm",
+        "template",
+        "k3s-nvidia-edge",
+        "charts/k3s-nvidia-edge"
+      ],
+      "started_at": "2026-07-19T04:32:56.104362033Z",
+      "duration": 154309914,
+      "output": "command output intentionally omitted by evidence policy"
+    },
+    {
+      "id": "llm-observability-stack:git-clean",
+      "scope": "llm-observability-stack",
+      "description": "Git worktree is clean",
+      "status": "PASS",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_at": "2026-07-19T04:32:56.278681411Z",
+      "duration": 13440602
+    },
+    {
+      "id": "llm-observability-stack:git-fsck",
+      "scope": "llm-observability-stack",
+      "description": "Git object connectivity",
+      "status": "PASS",
+      "command": [
+        "git",
+        "fsck",
+        "--connectivity-only"
+      ],
+      "started_at": "2026-07-19T04:32:56.292133236Z",
+      "duration": 175460275
+    },
+    {
+      "id": "llm-observability-stack:git-status",
+      "scope": "llm-observability-stack",
+      "description": "Git worktree has no tracked or untracked changes",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:32:56.467605715Z",
+      "duration": 6986306
+    },
+    {
+      "id": "llm-observability-stack:gofmt",
+      "scope": "llm-observability-stack",
+      "description": "Go sources are formatted",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:32:56.474600383Z",
+      "duration": 14635171
+    },
+    {
+      "id": "llm-observability-stack:go-mod-verify",
+      "scope": "llm-observability-stack",
+      "description": "Verify Go module downloads",
+      "status": "PASS",
+      "command": [
+        "go",
+        "mod",
+        "verify"
+      ],
+      "started_at": "2026-07-19T04:32:56.489243444Z",
+      "duration": 3064378235,
+      "output": "all modules verified"
+    },
+    {
+      "id": "llm-observability-stack:go-test",
+      "scope": "llm-observability-stack",
+      "description": "Run Go unit tests",
+      "status": "PASS",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:32:59.553649589Z",
+      "duration": 4232919067,
+      "output": "?   \tgithub.com/Edge-Computing-LLM/llm-observability-stack/cmd/edge-toolbox\t[no test files]\n?   \tgithub.com/Edge-Computing-LLM/llm-observability-stack/cmd/llm-observability\t[no test files]\n?   \tgithub.com/Edge-Computing-LLM/llm-observability-stack/cmd/ollama-gateway\t[no test files]\nok  \tgithub.com/Edge-Computing-LLM/llm-observability-stack/internal/benchmark\t0.005s\nok  \tgithub.com/Edge-Computing-LLM/llm-observability-stack/internal/gateway\t0.023s\nok  \tgithub.com/Edge-Computing-LLM/llm-observability-stack/internal/stack\t0.009s\nok  \tgithub.com/Edge-Computing-LLM/llm-observability-stack/internal/toolbox\t0.016s\nok  \tgithub.com/Edge-Computing-LLM/llm-observability-stack/tests\t2.494s"
+    },
+    {
+      "id": "llm-observability-stack:go-race",
+      "scope": "llm-observability-stack",
+      "description": "Run Go race tests",
+      "status": "PASS",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:33:03.786764901Z",
+      "duration": 8532704688,
+      "output": "?   \tgithub.com/Edge-Computing-LLM/llm-observability-stack/cmd/edge-toolbox\t[no test files]\n?   \tgithub.com/Edge-Computing-LLM/llm-observability-stack/cmd/llm-observability\t[no test files]\n?   \tgithub.com/Edge-Computing-LLM/llm-observability-stack/cmd/ollama-gateway\t[no test files]\nok  \tgithub.com/Edge-Computing-LLM/llm-observability-stack/internal/benchmark\t1.057s\nok  \tgithub.com/Edge-Computing-LLM/llm-observability-stack/internal/gateway\t1.123s\nok  \tgithub.com/Edge-Computing-LLM/llm-observability-stack/internal/stack\t1.059s\nok  \tgithub.com/Edge-Computing-LLM/llm-observability-stack/internal/toolbox\t1.035s\nok  \tgithub.com/Edge-Computing-LLM/llm-observability-stack/tests\t3.820s"
+    },
+    {
+      "id": "llm-observability-stack:go-vet",
+      "scope": "llm-observability-stack",
+      "description": "Run Go vet",
+      "status": "PASS",
+      "command": [
+        "go",
+        "vet",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:33:12.319659774Z",
+      "duration": 395798490
+    },
+    {
+      "id": "llm-observability-stack:govulncheck",
+      "scope": "llm-observability-stack",
+      "description": "Check reachable Go vulnerabilities",
+      "status": "PASS",
+      "command": [
+        "go",
+        "run",
+        "golang.org/x/vuln/cmd/govulncheck@latest",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:33:12.715469088Z",
+      "duration": 9197693534,
+      "output": "No vulnerabilities found."
+    },
+    {
+      "id": "llm-observability-stack:build-cli",
+      "scope": "llm-observability-stack",
+      "description": "Build Layer 2 CLI",
+      "status": "PASS",
+      "command": [
+        "go",
+        "build",
+        "-o",
+        "/tmp/edge-llm-tests-builds-3151655065/llm-observability",
+        "./cmd/llm-observability"
+      ],
+      "started_at": "2026-07-19T04:33:21.913190369Z",
+      "duration": 637199855
+    },
+    {
+      "id": "llm-observability-stack:build-gateway",
+      "scope": "llm-observability-stack",
+      "description": "Build Ollama gateway",
+      "status": "PASS",
+      "command": [
+        "go",
+        "build",
+        "-o",
+        "/tmp/edge-llm-tests-builds-3151655065/ollama-gateway",
+        "./cmd/ollama-gateway"
+      ],
+      "started_at": "2026-07-19T04:33:22.550401354Z",
+      "duration": 1270076523
+    },
+    {
+      "id": "llm-observability-stack:build-toolbox",
+      "scope": "llm-observability-stack",
+      "description": "Build edge toolbox",
+      "status": "PASS",
+      "command": [
+        "go",
+        "build",
+        "-o",
+        "/tmp/edge-llm-tests-builds-3151655065/edge-toolbox",
+        "./cmd/edge-toolbox"
+      ],
+      "started_at": "2026-07-19T04:33:23.820486274Z",
+      "duration": 1312463900
+    },
+    {
+      "id": "llm-observability-stack:helm-dependencies",
+      "scope": "llm-observability-stack",
+      "description": "Resolve vendored chart dependencies",
+      "status": "PASS",
+      "command": [
+        "helm",
+        "dependency",
+        "build",
+        "."
+      ],
+      "started_at": "2026-07-19T04:33:25.132960504Z",
+      "duration": 2050347151,
+      "output": "Hang tight while we grab the latest from your chart repositories...\n...Successfully got an update from the \"nvidia\" chart repository\nUpdate Complete. ⎈Happy Helming!⎈\nSaving 5 charts\nDeleting outdated charts"
+    },
+    {
+      "id": "llm-observability-stack:helm-lint",
+      "scope": "llm-observability-stack",
+      "description": "Lint Layer 2 Helm chart",
+      "status": "PASS",
+      "command": [
+        "helm",
+        "lint",
+        "."
+      ],
+      "started_at": "2026-07-19T04:33:27.183437998Z",
+      "duration": 373720297,
+      "output": "==\u003e Linting .\n[INFO] Chart.yaml: icon is recommended\n\n1 chart(s) linted, 0 chart(s) failed"
+    },
+    {
+      "id": "llm-observability-stack:helm-render-default",
+      "scope": "llm-observability-stack",
+      "description": "Render default Helm profile",
+      "status": "PASS",
+      "command": [
+        "helm",
+        "template",
+        "llm-observability-stack",
+        "."
+      ],
+      "started_at": "2026-07-19T04:33:27.557204707Z",
+      "duration": 202761719,
+      "output": "command output intentionally omitted by evidence policy"
+    },
+    {
+      "id": "llm-observability-stack:helm-render-cpu",
+      "scope": "llm-observability-stack",
+      "description": "Render cpu Helm profile",
+      "status": "PASS",
+      "command": [
+        "helm",
+        "template",
+        "llm-observability-stack",
+        ".",
+        "-f",
+        "values.cpu-k3s.yaml"
+      ],
+      "started_at": "2026-07-19T04:33:27.759970312Z",
+      "duration": 615855985,
+      "output": "command output intentionally omitted by evidence policy",
+      "output_truncated": true
+    },
+    {
+      "id": "llm-observability-stack:helm-render-local",
+      "scope": "llm-observability-stack",
+      "description": "Render local Helm profile",
+      "status": "PASS",
+      "command": [
+        "helm",
+        "template",
+        "llm-observability-stack",
+        ".",
+        "-f",
+        "values.local-k3s.example.yaml"
+      ],
+      "started_at": "2026-07-19T04:33:28.375829615Z",
+      "duration": 203939626,
+      "output": "command output intentionally omitted by evidence policy"
+    },
+    {
+      "id": "llm-observability-stack:helm-render-geforce",
+      "scope": "llm-observability-stack",
+      "description": "Render geforce Helm profile",
+      "status": "PASS",
+      "command": [
+        "helm",
+        "template",
+        "llm-observability-stack",
+        ".",
+        "-f",
+        "values.geforce-940m-k3s.yaml"
+      ],
+      "started_at": "2026-07-19T04:33:28.579773282Z",
+      "duration": 363693773,
+      "output": "command output intentionally omitted by evidence policy",
+      "output_truncated": true
+    },
+    {
+      "id": "llm-observability-stack:helm-render-full-nvidia",
+      "scope": "llm-observability-stack",
+      "description": "Render full-nvidia Helm profile",
+      "status": "PASS",
+      "command": [
+        "helm",
+        "template",
+        "llm-observability-stack",
+        ".",
+        "-f",
+        "values.full-stack-nvidia.example.yaml",
+        "--set",
+        "langsmith.existingSecret=",
+        "--set",
+        "openWebUI.existingSecret=",
+        "--set",
+        "open-webui.webuiSecret.existingSecretName="
+      ],
+      "started_at": "2026-07-19T04:33:28.943471676Z",
+      "duration": 461466461,
+      "output": "command output intentionally omitted by evidence policy",
+      "output_truncated": true
+    },
+    {
+      "id": "qwen-gguf-observability:git-clean",
+      "scope": "qwen-gguf-observability",
+      "description": "Git worktree is clean",
+      "status": "PASS",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_at": "2026-07-19T04:33:29.419762256Z",
+      "duration": 1836229
+    },
+    {
+      "id": "qwen-gguf-observability:git-fsck",
+      "scope": "qwen-gguf-observability",
+      "description": "Git object connectivity",
+      "status": "PASS",
+      "command": [
+        "git",
+        "fsck",
+        "--connectivity-only"
+      ],
+      "started_at": "2026-07-19T04:33:29.421607807Z",
+      "duration": 14644327
+    },
+    {
+      "id": "qwen-gguf-observability:git-status",
+      "scope": "qwen-gguf-observability",
+      "description": "Git worktree has no tracked or untracked changes",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:33:29.436270509Z",
+      "duration": 2343180
+    },
+    {
+      "id": "qwen-gguf-observability:gofmt",
+      "scope": "qwen-gguf-observability",
+      "description": "Go sources are formatted",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:33:29.438618297Z",
+      "duration": 6463094
+    },
+    {
+      "id": "qwen-gguf-observability:go-mod-verify",
+      "scope": "qwen-gguf-observability",
+      "description": "Verify Go module downloads",
+      "status": "PASS",
+      "command": [
+        "go",
+        "mod",
+        "verify"
+      ],
+      "started_at": "2026-07-19T04:33:29.445090484Z",
+      "duration": 5983881,
+      "output": "all modules verified"
+    },
+    {
+      "id": "qwen-gguf-observability:go-test",
+      "scope": "qwen-gguf-observability",
+      "description": "Run Go unit tests",
+      "status": "PASS",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:33:29.451104202Z",
+      "duration": 284229962,
+      "output": "?   \tgithub.com/Edge-Computing-LLM/qwen-gguf-observability/cmd/qwen-observe\t[no test files]\nok  \tgithub.com/Edge-Computing-LLM/qwen-gguf-observability/internal/observer\t0.005s"
+    },
+    {
+      "id": "qwen-gguf-observability:go-race",
+      "scope": "qwen-gguf-observability",
+      "description": "Run Go race tests",
+      "status": "PASS",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:33:29.735400708Z",
+      "duration": 1476140710,
+      "output": "?   \tgithub.com/Edge-Computing-LLM/qwen-gguf-observability/cmd/qwen-observe\t[no test files]\nok  \tgithub.com/Edge-Computing-LLM/qwen-gguf-observability/internal/observer\t1.021s"
+    },
+    {
+      "id": "qwen-gguf-observability:go-vet",
+      "scope": "qwen-gguf-observability",
+      "description": "Run Go vet",
+      "status": "PASS",
+      "command": [
+        "go",
+        "vet",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:33:31.21164028Z",
+      "duration": 127663104
+    },
+    {
+      "id": "qwen-gguf-observability:govulncheck",
+      "scope": "qwen-gguf-observability",
+      "description": "Check reachable Go vulnerabilities",
+      "status": "PASS",
+      "command": [
+        "go",
+        "run",
+        "golang.org/x/vuln/cmd/govulncheck@latest",
+        "./..."
+      ],
+      "started_at": "2026-07-19T04:33:31.339315192Z",
+      "duration": 4376067016,
+      "output": "No vulnerabilities found."
+    },
+    {
+      "id": "qwen-gguf-observability:build",
+      "scope": "qwen-gguf-observability",
+      "description": "Build read-only Qwen observer",
+      "status": "PASS",
+      "command": [
+        "go",
+        "build",
+        "-o",
+        "/tmp/edge-llm-tests-builds-3151655065/qwen-observe",
+        "./cmd/qwen-observe"
+      ],
+      "started_at": "2026-07-19T04:33:35.715408467Z",
+      "duration": 369276927
+    },
+    {
+      "id": "dashboard-template-candidates/grafana-faro-nextjs-example:git-clean",
+      "scope": "dashboard-template-candidates/grafana-faro-nextjs-example",
+      "description": "Git worktree is clean",
+      "status": "PASS",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_at": "2026-07-19T04:33:36.099396708Z",
+      "duration": 1987844
+    },
+    {
+      "id": "dashboard-template-candidates/grafana-faro-nextjs-example:git-fsck",
+      "scope": "dashboard-template-candidates/grafana-faro-nextjs-example",
+      "description": "Git object connectivity",
+      "status": "PASS",
+      "command": [
+        "git",
+        "fsck",
+        "--connectivity-only"
+      ],
+      "started_at": "2026-07-19T04:33:36.101393659Z",
+      "duration": 15194055
+    },
+    {
+      "id": "dashboard-template-candidates/grafana-faro-nextjs-example:git-status",
+      "scope": "dashboard-template-candidates/grafana-faro-nextjs-example",
+      "description": "Git worktree has no tracked or untracked changes",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:33:36.116632235Z",
+      "duration": 5364939
+    },
+    {
+      "id": "dashboard-template-candidates/grafana-faro-nextjs-example:frontend",
+      "scope": "dashboard-template-candidates/grafana-faro-nextjs-example",
+      "description": "Run available frontend lint/test/build scripts",
+      "status": "SKIP",
+      "started_at": "2026-07-19T04:33:36.122002212Z",
+      "duration": 0,
+      "reason": "dependencies are not installed; audit does not mutate third-party candidates"
+    },
+    {
+      "id": "dashboard-template-candidates/material-kit-react:git-clean",
+      "scope": "dashboard-template-candidates/material-kit-react",
+      "description": "Git worktree is clean",
+      "status": "PASS",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_at": "2026-07-19T04:33:36.137970214Z",
+      "duration": 2437495
+    },
+    {
+      "id": "dashboard-template-candidates/material-kit-react:git-fsck",
+      "scope": "dashboard-template-candidates/material-kit-react",
+      "description": "Git object connectivity",
+      "status": "PASS",
+      "command": [
+        "git",
+        "fsck",
+        "--connectivity-only"
+      ],
+      "started_at": "2026-07-19T04:33:36.140418308Z",
+      "duration": 11571075
+    },
+    {
+      "id": "dashboard-template-candidates/material-kit-react:git-status",
+      "scope": "dashboard-template-candidates/material-kit-react",
+      "description": "Git worktree has no tracked or untracked changes",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:33:36.152003096Z",
+      "duration": 3065635
+    },
+    {
+      "id": "dashboard-template-candidates/material-kit-react:frontend",
+      "scope": "dashboard-template-candidates/material-kit-react",
+      "description": "Run available frontend lint/test/build scripts",
+      "status": "SKIP",
+      "started_at": "2026-07-19T04:33:36.155074512Z",
+      "duration": 0,
+      "reason": "dependencies are not installed; audit does not mutate third-party candidates"
+    },
+    {
+      "id": "dashboard-template-candidates/next-shadcn-admin-dashboard:git-clean",
+      "scope": "dashboard-template-candidates/next-shadcn-admin-dashboard",
+      "description": "Git worktree is clean",
+      "status": "PASS",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_at": "2026-07-19T04:33:36.171476298Z",
+      "duration": 3477010
+    },
+    {
+      "id": "dashboard-template-candidates/next-shadcn-admin-dashboard:git-fsck",
+      "scope": "dashboard-template-candidates/next-shadcn-admin-dashboard",
+      "description": "Git object connectivity",
+      "status": "PASS",
+      "command": [
+        "git",
+        "fsck",
+        "--connectivity-only"
+      ],
+      "started_at": "2026-07-19T04:33:36.174987115Z",
+      "duration": 14110788
+    },
+    {
+      "id": "dashboard-template-candidates/next-shadcn-admin-dashboard:git-status",
+      "scope": "dashboard-template-candidates/next-shadcn-admin-dashboard",
+      "description": "Git worktree has no tracked or untracked changes",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:33:36.189111504Z",
+      "duration": 6081191
+    },
+    {
+      "id": "dashboard-template-candidates/next-shadcn-admin-dashboard:frontend",
+      "scope": "dashboard-template-candidates/next-shadcn-admin-dashboard",
+      "description": "Run available frontend lint/test/build scripts",
+      "status": "SKIP",
+      "started_at": "2026-07-19T04:33:36.195204409Z",
+      "duration": 0,
+      "reason": "dependencies are not installed; audit does not mutate third-party candidates"
+    },
+    {
+      "id": "dashboard-template-candidates/next-shadcn-dashboard-starter:git-clean",
+      "scope": "dashboard-template-candidates/next-shadcn-dashboard-starter",
+      "description": "Git worktree is clean",
+      "status": "PASS",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_at": "2026-07-19T04:33:36.218198123Z",
+      "duration": 3738101
+    },
+    {
+      "id": "dashboard-template-candidates/next-shadcn-dashboard-starter:git-fsck",
+      "scope": "dashboard-template-candidates/next-shadcn-dashboard-starter",
+      "description": "Git object connectivity",
+      "status": "PASS",
+      "command": [
+        "git",
+        "fsck",
+        "--connectivity-only"
+      ],
+      "started_at": "2026-07-19T04:33:36.221945434Z",
+      "duration": 13936115
+    },
+    {
+      "id": "dashboard-template-candidates/next-shadcn-dashboard-starter:git-status",
+      "scope": "dashboard-template-candidates/next-shadcn-dashboard-starter",
+      "description": "Git worktree has no tracked or untracked changes",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:33:36.235900172Z",
+      "duration": 6453345
+    },
+    {
+      "id": "dashboard-template-candidates/next-shadcn-dashboard-starter:frontend",
+      "scope": "dashboard-template-candidates/next-shadcn-dashboard-starter",
+      "description": "Run available frontend lint/test/build scripts",
+      "status": "SKIP",
+      "started_at": "2026-07-19T04:33:36.24235912Z",
+      "duration": 0,
+      "reason": "dependencies are not installed; audit does not mutate third-party candidates"
+    },
+    {
+      "id": "dashboard-template-candidates/nextadmin-dashboard:git-clean",
+      "scope": "dashboard-template-candidates/nextadmin-dashboard",
+      "description": "Git worktree is clean",
+      "status": "PASS",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_at": "2026-07-19T04:33:36.2612656Z",
+      "duration": 3696690
+    },
+    {
+      "id": "dashboard-template-candidates/nextadmin-dashboard:git-fsck",
+      "scope": "dashboard-template-candidates/nextadmin-dashboard",
+      "description": "Git object connectivity",
+      "status": "PASS",
+      "command": [
+        "git",
+        "fsck",
+        "--connectivity-only"
+      ],
+      "started_at": "2026-07-19T04:33:36.26497111Z",
+      "duration": 10700335
+    },
+    {
+      "id": "dashboard-template-candidates/nextadmin-dashboard:git-status",
+      "scope": "dashboard-template-candidates/nextadmin-dashboard",
+      "description": "Git worktree has no tracked or untracked changes",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:33:36.275682355Z",
+      "duration": 7408495
+    },
+    {
+      "id": "dashboard-template-candidates/nextadmin-dashboard:frontend",
+      "scope": "dashboard-template-candidates/nextadmin-dashboard",
+      "description": "Run available frontend lint/test/build scripts",
+      "status": "SKIP",
+      "started_at": "2026-07-19T04:33:36.283102947Z",
+      "duration": 0,
+      "reason": "dependencies are not installed; audit does not mutate third-party candidates"
+    },
+    {
+      "id": "dashboard-template-candidates/rh-ai-observability-summarizer:git-clean",
+      "scope": "dashboard-template-candidates/rh-ai-observability-summarizer",
+      "description": "Git worktree is clean",
+      "status": "PASS",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_at": "2026-07-19T04:33:36.309870948Z",
+      "duration": 3565124
+    },
+    {
+      "id": "dashboard-template-candidates/rh-ai-observability-summarizer:git-fsck",
+      "scope": "dashboard-template-candidates/rh-ai-observability-summarizer",
+      "description": "Git object connectivity",
+      "status": "PASS",
+      "command": [
+        "git",
+        "fsck",
+        "--connectivity-only"
+      ],
+      "started_at": "2026-07-19T04:33:36.313445023Z",
+      "duration": 17493492
+    },
+    {
+      "id": "dashboard-template-candidates/rh-ai-observability-summarizer:git-status",
+      "scope": "dashboard-template-candidates/rh-ai-observability-summarizer",
+      "description": "Git worktree has no tracked or untracked changes",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:33:36.330966068Z",
+      "duration": 5524262
+    },
+    {
+      "id": "dashboard-template-candidates/rh-ai-observability-summarizer:package",
+      "scope": "dashboard-template-candidates/rh-ai-observability-summarizer",
+      "description": "Inspect frontend test scripts",
+      "status": "SKIP",
+      "started_at": "2026-07-19T04:33:36.336498649Z",
+      "duration": 0,
+      "reason": "package.json is unavailable"
+    },
+    {
+      "id": "dashboard-template-candidates/tailadmin-nextjs:git-clean",
+      "scope": "dashboard-template-candidates/tailadmin-nextjs",
+      "description": "Git worktree is clean",
+      "status": "PASS",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_at": "2026-07-19T04:33:36.353023694Z",
+      "duration": 2578408
+    },
+    {
+      "id": "dashboard-template-candidates/tailadmin-nextjs:git-fsck",
+      "scope": "dashboard-template-candidates/tailadmin-nextjs",
+      "description": "Git object connectivity",
+      "status": "PASS",
+      "command": [
+        "git",
+        "fsck",
+        "--connectivity-only"
+      ],
+      "started_at": "2026-07-19T04:33:36.355612798Z",
+      "duration": 13294153
+    },
+    {
+      "id": "dashboard-template-candidates/tailadmin-nextjs:git-status",
+      "scope": "dashboard-template-candidates/tailadmin-nextjs",
+      "description": "Git worktree has no tracked or untracked changes",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:33:36.368917017Z",
+      "duration": 3641112
+    },
+    {
+      "id": "dashboard-template-candidates/tailadmin-nextjs:frontend",
+      "scope": "dashboard-template-candidates/tailadmin-nextjs",
+      "description": "Run available frontend lint/test/build scripts",
+      "status": "SKIP",
+      "started_at": "2026-07-19T04:33:36.372560914Z",
+      "duration": 0,
+      "reason": "dependencies are not installed; audit does not mutate third-party candidates"
+    },
+    {
+      "id": "collection:evidence-boundary",
+      "scope": "collection",
+      "description": "Credential, model-weight, backup, and large-file directory contents are excluded",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:33:36.372884567Z",
+      "duration": 0,
+      "reason": "metadata-only inventory; sensitive directory contents were not opened"
+    },
+    {
+      "id": "host:uname",
+      "scope": "host",
+      "description": "Inspect kernel and architecture",
+      "status": "PASS",
+      "command": [
+        "uname",
+        "-srmo"
+      ],
+      "started_at": "2026-07-19T04:33:36.849455456Z",
+      "duration": 965636,
+      "output": "Linux 6.17.0-40-generic x86_64 GNU/Linux"
+    },
+    {
+      "id": "host:os-release",
+      "scope": "host",
+      "description": "Inspect operating system release",
+      "status": "PASS",
+      "command": [
+        "lsb_release",
+        "-ds"
+      ],
+      "started_at": "2026-07-19T04:33:36.850442841Z",
+      "duration": 12259944,
+      "output": "Ubuntu 24.04.3 LTS"
+    },
+    {
+      "id": "host:go",
+      "scope": "host",
+      "description": "Inspect Go toolchain",
+      "status": "PASS",
+      "command": [
+        "go",
+        "version"
+      ],
+      "started_at": "2026-07-19T04:33:36.862956158Z",
+      "duration": 7563165,
+      "output": "go version go1.26.5 linux/amd64"
+    },
+    {
+      "id": "host:k3s",
+      "scope": "host",
+      "description": "Inspect k3s version",
+      "status": "PASS",
+      "command": [
+        "k3s",
+        "--version"
+      ],
+      "started_at": "2026-07-19T04:33:36.870553832Z",
+      "duration": 13391337,
+      "output": "k3s version v1.36.2+k3s1 (01b6f04a)\ngo version go1.26.4"
+    },
+    {
+      "id": "host:kubectl",
+      "scope": "host",
+      "description": "Inspect Kubernetes client and server versions",
+      "status": "PASS",
+      "command": [
+        "kubectl",
+        "version"
+      ],
+      "started_at": "2026-07-19T04:33:36.884014626Z",
+      "duration": 165541559,
+      "output": "Client Version: v1.36.2+k3s1\nKustomize Version: v5.8.1\nServer Version: v1.36.2+k3s1"
+    },
+    {
+      "id": "host:helm",
+      "scope": "host",
+      "description": "Inspect Helm version",
+      "status": "PASS",
+      "command": [
+        "helm",
+        "version",
+        "--short"
+      ],
+      "started_at": "2026-07-19T04:33:37.049613106Z",
+      "duration": 57008943,
+      "output": "v4.2.3+g43e8b7f"
+    },
+    {
+      "id": "gpu:nvidia-smi",
+      "scope": "gpu",
+      "description": "Inspect NVIDIA GPU and driver",
+      "status": "PASS",
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,memory.total",
+        "--format=csv,noheader"
+      ],
+      "started_at": "2026-07-19T04:33:37.106644372Z",
+      "duration": 38192858,
+      "output": "NVIDIA GeForce 940M, 580.95.05, 1024 MiB"
+    },
+    {
+      "id": "cluster:context",
+      "scope": "cluster",
+      "description": "Confirm an active Kubernetes context",
+      "status": "PASS",
+      "command": [
+        "kubectl",
+        "config",
+        "current-context"
+      ],
+      "started_at": "2026-07-19T04:33:37.144906841Z",
+      "duration": 139541932,
+      "output": "default"
+    },
+    {
+      "id": "cluster:nodes",
+      "scope": "cluster",
+      "description": "Inspect node readiness without network addresses",
+      "status": "PASS",
+      "command": [
+        "kubectl",
+        "get",
+        "nodes"
+      ],
+      "started_at": "2026-07-19T04:33:37.284481423Z",
+      "duration": 153425057,
+      "output": "NAME                      STATUS   ROLES           AGE     VERSION\n[redacted-user]-thinkpad-t450s   Ready    control-plane   2d15h   v1.36.2+k3s1"
+    },
+    {
+      "id": "cluster:runtimeclasses",
+      "scope": "cluster",
+      "description": "Inspect GPU runtime classes",
+      "status": "PASS",
+      "command": [
+        "kubectl",
+        "get",
+        "runtimeclass"
+      ],
+      "started_at": "2026-07-19T04:33:37.437976368Z",
+      "duration": 164599100,
+      "output": "NAME                  HANDLER               AGE\ncrun                  crun                  2d15h\nlunatic               lunatic               2d15h\nnvidia                nvidia                21h\nnvidia-cdi            nvidia-cdi            21h\nnvidia-experimental   nvidia-experimental   2d15h\nnvidia-legacy         nvidia-legacy         21h\nslight                slight                2d15h\nspin                  spin                  2d15h\nwasmedge              wasmedge              2d15h\nwasmer                wasmer                2d15h\nwasmtime              wasmtime              2d15h\nwws                   wws                   2d15h"
+    },
+    {
+      "id": "cluster:gpu-capacity",
+      "scope": "cluster",
+      "description": "Inspect node GPU capacity and allocatable resources",
+      "status": "PASS",
+      "command": [
+        "kubectl",
+        "get",
+        "nodes",
+        "-o",
+        "custom-columns=NAME:.metadata.name,CAPACITY:.status.capacity.nvidia\\.com/gpu,ALLOCATABLE:.status.allocatable.nvidia\\.com/gpu"
+      ],
+      "started_at": "2026-07-19T04:33:37.602811987Z",
+      "duration": 177048187,
+      "output": "NAME                      CAPACITY   ALLOCATABLE\n[redacted-user]-thinkpad-t450s   1          1"
+    },
+    {
+      "id": "cluster:pods",
+      "scope": "cluster",
+      "description": "Inspect workload readiness without pod IP addresses",
+      "status": "PASS",
+      "command": [
+        "kubectl",
+        "get",
+        "pods",
+        "-A"
+      ],
+      "started_at": "2026-07-19T04:33:37.779953566Z",
+      "duration": 271476718,
+      "output": "NAMESPACE           NAME                                                             READY   STATUS             RESTARTS         AGE\ngpu-operator        gpu-operator-7c46869546-sf84m                                    0/1     CrashLoopBackOff   25 (41s ago)     21h\ngpu-operator        k3s-nvidia-edge-node-feature-discovery-gc-6576ddb78b-c6cg8       1/1     Running            1 (101m ago)     21h\ngpu-operator        k3s-nvidia-edge-node-feature-discovery-master-6bff59d775-p4rdp   0/1     Running            22 (93s ago)     21h\ngpu-operator        k3s-nvidia-edge-node-feature-discovery-worker-fhgxf              0/1     CrashLoopBackOff   24 (109s ago)    21h\ngpu-operator        nvidia-container-toolkit-daemonset-cfl6l                         1/1     Running            2 (100m ago)     21h\ngpu-operator        nvidia-cuda-validator-5mf25                                      0/1     Completed          0                100m\ngpu-operator        nvidia-dcgm-exporter-k4bwq                                       1/1     Running            1 (101m ago)     21h\ngpu-operator        nvidia-device-plugin-daemonset-sltx7                             1/1     Running            1 (101m ago)     21h\ngpu-operator        nvidia-operator-validator-sx772                                  1/1     Running            1 (101m ago)     21h\nkube-system         coredns-5f5694d56b-dc6r7                                         1/1     Running            4 (101m ago)     2d15h\nkube-system         helm-install-traefik-5sclh                                       0/1     Completed          2 (2d15h ago)    2d15h\nkube-system         helm-install-traefik-crd-28qv9                                   0/1     Completed          0                2d15h\nkube-system         local-path-provisioner-58d557dc48-b5xwg                          1/1     Running            5 (101m ago)     2d15h\nkube-system         metrics-server-7c86f97b8d-zk6gt                                  0/1     Running            6 (101m ago)     2d15h\nkube-system         svclb-traefik-8606b3ad-czhlg                                     2/2     Running            8 (101m ago)     2d15h\nkube-system         traefik-6cd8c7cd89-72g2f                                         1/1     Running            4 (101m ago)     2d15h\nllm-observability   kube-prometheus-stack-operator-84569cbb56-kk5p5                  1/1     Running            1 (101m ago)     21h\nllm-observability   llm-observability-stack-grafana-7bd785954c-7dznn                 3/3     Running            3 (101m ago)     21h\nllm-observability   llm-observability-stack-kube-state-metrics-84dff64b89-kfbtw      0/1     CrashLoopBackOff   24 (78s ago)     21h\nllm-observability   llm-observability-stack-prometheus-node-exporter-f7hs6           0/1     CrashLoopBackOff   35 (4m24s ago)   21h\nllm-observability   ollama-5cd5fb5c8d-ml48z                                          0/1     Unknown            0                21h\nllm-observability   ollama-5cd5fb5c8d-zv6l8                                          1/1     Running            0                101m\nllm-observability   open-webui-0                                                     1/1     Running            1 (101m ago)     21h\nllm-observability   open-webui-redis-5b4b5b48d5-zgbks                                1/1     Running            1 (101m ago)     21h\nllm-observability   opentelemetry-collector-7dd4d89978-pqx69                         1/1     Running            1 (101m ago)     21h\nllm-observability   prometheus-kube-prometheus-stack-prometheus-0                    2/2     Running            2 (101m ago)     21h"
+    },
+    {
+      "id": "cluster:helm-releases",
+      "scope": "cluster",
+      "description": "Inspect deployed Helm releases",
+      "status": "PASS",
+      "command": [
+        "helm",
+        "list",
+        "-A"
+      ],
+      "started_at": "2026-07-19T04:33:38.053183662Z",
+      "duration": 383338128,
+      "output": "NAME                   \tNAMESPACE        \tREVISION\tUPDATED                                \tSTATUS  \tCHART                        \tAPP VERSION\nk3s-nvidia-edge        \tgpu-operator     \t1       \t2026-07-18 12:21:13.458230302 +0500 PKT\tdeployed\tk3s-nvidia-edge-0.1.0        \t0.1.0      \nllm-observability-stack\tllm-observability\t1       \t2026-07-18 12:24:15.226064275 +0500 PKT\tdeployed\tllm-observability-stack-0.3.0\t1.2.0      \ntraefik                \tkube-system      \t1       \t2026-07-16 13:31:04.502574506 +0000 UTC\tdeployed\ttraefik-40.1.3+up40.1.0      \tv3.7.1     \ntraefik-crd            \tkube-system      \t1       \t2026-07-16 13:30:49.003269556 +0000 UTC\tdeployed\ttraefik-crd-40.1.3+up40.1.0  \tv3.7.1"
+    },
+    {
+      "id": "cluster:storage",
+      "scope": "cluster",
+      "description": "Inspect storage classes and claims",
+      "status": "PASS",
+      "command": [
+        "kubectl",
+        "get",
+        "storageclass,pvc",
+        "-A"
+      ],
+      "started_at": "2026-07-19T04:33:38.436765676Z",
+      "duration": 216324868,
+      "output": "NAME                                               PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE\nstorageclass.storage.k8s.io/local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  2d15h\n\nNAMESPACE           NAME                               STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE\nllm-observability   persistentvolumeclaim/ollama       Bound    pvc-0037c3d0-3397-42f8-bfc0-ac1629904c5a   5Gi        RWO            local-path     \u003cunset\u003e                 21h\nllm-observability   persistentvolumeclaim/open-webui   Bound    pvc-4948899f-2295-4892-a837-a679ccbc21d1   2Gi        RWO            local-path     \u003cunset\u003e                 21h"
+    },
+    {
+      "id": "edge-cli:validate-infra",
+      "scope": "live-validation",
+      "description": "Run unified read-only infrastructure validation",
+      "status": "FAIL",
+      "command": [
+        "go",
+        "run",
+        "./cmd/edge",
+        "--timeout",
+        "2m",
+        "validate",
+        "infra",
+        "--skip-cuda"
+      ],
+      "started_at": "2026-07-19T04:33:38.653367722Z",
+      "duration": 1681602066,
+      "exit_code": 1,
+      "output": "[ok] kubectl cluster-info\n  Kubernetes control plane is running at https://[redacted-ip]:6443\n  CoreDNS is running at https://[redacted-ip]:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy\n  Metrics-server is running at https://[redacted-ip]:6443/api/v1/namespaces/kube-system/services/https:metrics-server:https/proxy\n  \n  To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.\n[ok] cluster nodes\n  NAME                      STATUS   ROLES           AGE     VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION              CONTAINER-RUNTIME\n  [redacted-user]-thinkpad-t450s   Ready    control-plane   2d15h   v1.36.2+k3s1   [redacted-ip]   \u003cnone\u003e        Ubuntu 24.04.3 LTS   6.17.0-40-generic (amd64)   containerd://2.3.2-k3s2\n[fail] k3s node address\n[ok] NVIDIA RuntimeClass\n  NAME     HANDLER   AGE\n  nvidia   nvidia    21h\n[fail] gpu-operator pod health\n  8 active, 1 completed\n[ok] GPU allocatable\n  1\nError: 2 check(s) failed: k3s node address, gpu-operator pod health\nUsage:\n  edge validate infra [flags]\n\nFlags:\n  -h, --help        help for infra\n      --skip-cuda   skip the CUDA pod when the GPU is occupied by a workload\n\nGlobal Flags:\n      --config string    config file path\n      --dry-run          print mutating operations without executing them\n      --timeout string   overall command timeout (default \"10m\")\n      --verbose          print command details\n\n2 check(s) failed: k3s node address, gpu-operator pod health\nexit status 1",
+      "reason": "command exited with status 1"
+    },
+    {
+      "id": "k3s-nvidia-edge:doctor",
+      "scope": "live-validation",
+      "description": "Run Layer 1 read-only host and cluster diagnostics",
+      "status": "FAIL",
+      "command": [
+        "go",
+        "run",
+        "./cmd/k3s-nvidia-edge",
+        "doctor",
+        "--sudo=false"
+      ],
+      "started_at": "2026-07-19T04:33:40.337144306Z",
+      "duration": 1653441338,
+      "exit_code": 1,
+      "output": "command output intentionally omitted by evidence policy",
+      "reason": "command exited with status 1"
+    },
+    {
+      "id": "llm-observability-stack:doctor",
+      "scope": "live-validation",
+      "description": "Run Layer 2 read-only diagnostics",
+      "status": "FAIL",
+      "command": [
+        "go",
+        "run",
+        "./cmd/llm-observability",
+        "doctor",
+        "-timeout",
+        "1m"
+      ],
+      "started_at": "2026-07-19T04:33:41.990596625Z",
+      "duration": 538033929,
+      "exit_code": 1,
+      "output": "[run] Kubernetes connectivity\nKubernetes control plane is running at https://[redacted-ip]:6443\nCoreDNS is running at https://[redacted-ip]:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy\nMetrics-server is running at https://[redacted-ip]:6443/api/v1/namespaces/kube-system/services/https:metrics-server:https/proxy\n\nTo further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.\n[run] k3s node address\nk3s node InternalIP is not assigned to a current host interface\ncheck node-ip and flannel-iface in /etc/rancher/k3s/config.yaml, then restart k3s\nerror: k3s node address failed: exit status 1\nexit status 1",
+      "reason": "command exited with status 1"
+    },
+    {
+      "id": "qwen-gguf-observability:validate",
+      "scope": "live-validation",
+      "description": "Validate local Qwen observability state",
+      "status": "FAIL",
+      "command": [
+        "go",
+        "run",
+        "./cmd/qwen-observe",
+        "validate"
+      ],
+      "started_at": "2026-07-19T04:33:42.528831141Z",
+      "duration": 2776114812,
+      "exit_code": 1,
+      "output": "[PASS] kubernetes-node-ready: all observed nodes are Ready\n[PASS] nvidia-gpu-allocatable: at least one nvidia.com/gpu is allocatable\n[PASS] nvidia-runtimeclass: RuntimeClass/nvidia exists\n[PASS] helm-release-deployed: LLM stack Helm release is deployed\n[FAIL] workloads-ready: all observed application containers are Ready\n[PASS] qwen-registered: expected local Qwen alias is registered\n[PASS] qwen-resident: expected local Qwen alias is loaded\n[PASS] qwen-gpu-active: Ollama reports GPU participation\n[PASS] qwen-keep-alive: Ollama reports Until=Forever\n[PASS] vram-ceiling: GPU memory stays at or below 850 MiB\n[PASS] num-gpu-layers: num_gpu is 23\n[PASS] context-window: num_ctx is 256\n[PASS] batch-size: num_batch is 1\n\n12 passed, 1 failed\nerror: runtime contract failed\nexit status 1",
+      "reason": "command exited with status 1"
+    },
+    {
+      "id": "qwen-gguf-observability:smoke",
+      "scope": "live-validation",
+      "description": "Run the fixed, privacy-safe Qwen smoke probe",
+      "status": "PASS",
+      "command": [
+        "go",
+        "run",
+        "./cmd/qwen-observe",
+        "smoke",
+        "--output",
+        "/media/[redacted-user]/External1/Waqas-Projects/Project-Linux-Kubernetes-Nvidia/Project-Edge-Computing-LLM/edge-llm-tests/results/20260719T043235Z/qwen-smoke.json"
+      ],
+      "started_at": "2026-07-19T04:33:45.305388522Z",
+      "duration": 1957058145,
+      "output": "command output intentionally omitted by evidence policy"
+    },
+    {
+      "id": "cluster:evidence-boundary",
+      "scope": "cluster",
+      "description": "Live evidence excludes Kubernetes Secrets, kubeconfig content, pod logs, environment dumps, prompts, and responses",
+      "status": "PASS",
+      "started_at": "2026-07-19T04:33:47.262449324Z",
+      "duration": 0,
+      "reason": "read-only allowlisted commands"
+    }
+  ],
+  "summary": {
+    "passed": 89,
+    "failed": 4,
+    "skipped": 7,
+    "total": 100
+  }
+}

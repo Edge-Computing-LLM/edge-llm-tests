@@ -1,6 +1,7 @@
 package sanitize
 
 import (
+	"os"
 	"strings"
 	"testing"
 )
@@ -12,5 +13,15 @@ func TestTextRedactsSensitiveEvidence(t *testing.T) {
 		if strings.Contains(output, forbidden) {
 			t.Fatalf("sanitized output contains %q: %s", forbidden, output)
 		}
+	}
+}
+
+func TestTextRedactsLocalIdentity(t *testing.T) {
+	hostname, err := os.Hostname()
+	if err != nil || hostname == "" {
+		t.Skip("hostname unavailable")
+	}
+	if got := Text("node=" + hostname); strings.Contains(got, hostname) {
+		t.Fatalf("hostname was not redacted: %s", got)
 	}
 }
