@@ -1,6 +1,8 @@
 package sanitize
 
 import (
+	"os"
+	"os/user"
 	"regexp"
 	"strings"
 )
@@ -22,6 +24,12 @@ func Text(value string) string {
 	value = ipv4.ReplaceAllString(value, "[redacted-ip]")
 	value = homePath.ReplaceAllString(value, "/home/[redacted-user]")
 	value = mediaPath.ReplaceAllString(value, "/media/[redacted-user]")
+	if current, err := user.Current(); err == nil && current.Username != "" {
+		value = strings.ReplaceAll(value, current.Username, "[redacted-user]")
+	}
+	if hostname, err := os.Hostname(); err == nil && hostname != "" {
+		value = strings.ReplaceAll(value, hostname, "[redacted-host]")
+	}
 	return strings.TrimSpace(value)
 }
 
