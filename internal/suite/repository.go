@@ -16,7 +16,7 @@ import (
 	"github.com/Edge-Computing-LLM/edge-llm-tests/internal/runner"
 )
 
-var organizationRepos = []string{"edge-cli", "k3s-nvidia-edge", "llm-observability-stack", "qwen-gguf-observability"}
+var organizationRepos = []string{"edge-cli", "k3s-nvidia-edge", "llm-observability-stack", "gguf-observability"}
 
 func RepositoryChecks(ctx context.Context, root string, run runner.Runner, includeCandidates bool) ([]model.Repository, []model.Check) {
 	buildDir, err := os.MkdirTemp("", "edge-llm-tests-builds-")
@@ -139,14 +139,16 @@ func repositoryPlan(name, path, buildDir string, run runner.Runner, ctx context.
 			{"cpu", []string{"-f", "values.cpu-k3s.yaml"}},
 			{"local", []string{"-f", "values.local-k3s.example.yaml"}},
 			{"geforce", []string{"-f", "values.geforce-940m-k3s.yaml"}},
+			{"geforce-gemma", []string{"-f", "values.geforce-940m-k3s.yaml", "-f", "values.gemma-3-1b-geforce-940m-k3s.yaml"}},
+			{"geforce-llama", []string{"-f", "values.geforce-940m-k3s.yaml", "-f", "values.llama3.2-1b-geforce-940m-k3s.yaml"}},
 			{"full-nvidia", []string{"-f", "values.full-stack-nvidia.example.yaml", "--set", "langsmith.existingSecret=", "--set", "openWebUI.existingSecret=", "--set", "open-webui.webuiSecret.existingSecretName="}},
 		}
 		for _, profile := range profiles {
 			args := append([]string{"template", "llm-observability-stack", "."}, profile.args...)
 			specs = append(specs, runner.Spec{ID: name + ":helm-render-" + profile.id, Scope: name, Description: "Render " + profile.id + " Helm profile", Dir: path, Name: "helm", Args: args, Required: true, OmitOutput: true})
 		}
-	case "qwen-gguf-observability":
-		specs = append(specs, runner.Spec{ID: name + ":build", Scope: name, Description: "Build read-only Qwen observer", Dir: path, Name: "go", Args: []string{"build", "-o", filepath.Join(buildDir, "qwen-observe"), "./cmd/qwen-observe"}, Required: true})
+	case "gguf-observability":
+		specs = append(specs, runner.Spec{ID: name + ":build", Scope: name, Description: "Build read-only GGUF observer", Dir: path, Name: "go", Args: []string{"build", "-o", filepath.Join(buildDir, "gguf-observe"), "./cmd/gguf-observe"}, Required: true})
 	}
 	checks := make([]model.Check, 0, len(specs))
 	for _, spec := range specs {
